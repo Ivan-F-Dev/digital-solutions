@@ -1,0 +1,17 @@
+.items-search {
+  flex: 1 1;
+  height: 34px;
+  padding: 5px 10px;
+  font-family: var(--ff-main);
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  border: 1px solid var(--color-black);
+  border-radius: 10px;
+  transition: border-color var(--transition-200);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--color-navy-blue);
+  }
+}
