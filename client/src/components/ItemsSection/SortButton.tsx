@@ -18,7 +18,8 @@ const SortButton: FC<SortButtonProps> = ({ descending = false }) => {
   });
 
   const handleClick = () => {
-    mutation.mutate(descending);
+    RootStore.items.setItems([...RootStore.items.items].sort((a, b) => descending ? b.value - a.value : a.value - b.value), true)
+    // mutation.mutate(descending);
   }
 
   return (

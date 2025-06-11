@@ -11,9 +11,10 @@ export class ItemsStore {
     makeAutoObservable(this);
   }
 
-  setItems(items: Item[] | undefined) {
+  setItems(items: Item[] | undefined, sort = false) {
     this.isPageLoaded = !!items;
     items ??= [];
+    if (sort) return  this.items = items;
     if (this.page > 1) this.items.push(...items)
     else this.items = items;
   }

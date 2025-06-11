@@ -35,7 +35,7 @@ app.get('/api/items', (req, res) => {
 
   const startIndex = PAGE_SIZE * (page - 1);
   const itemsByPage = search
-    ? DB.items.filter((e) => e.value.toString().startsWith(search)).slice(startIndex, startIndex + PAGE_SIZE)
+    ? DB.items.filter((e) => e.value.toString().includes(search)).slice(startIndex, startIndex + PAGE_SIZE)
     : DB.items.slice(startIndex, startIndex + PAGE_SIZE);
   res.json(itemsByPage);
 });
